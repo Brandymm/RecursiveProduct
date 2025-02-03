@@ -5,12 +5,13 @@ public class RecursiveProduct {
 	
 	// Recursive method to calculate the product of numbers
 	public static int calculateProduct(int[] numbers, int index) {
-		// Base case: If we've processed all numbers, return 1 (identity for multiplication)
+		// Base case: When the index reaches the length of the array, we stop recursion and return 1.
+		// This is the identity for multiplication, ensuring the recursive multiplication works.
 		if (index == numbers.length) {
 			return 1;
 		}
 		
-		// Recursive case: multiply the current number with the result of the next numbers
+		// Recursive case: multiply the current number at 'index' with the result of the next recursive step.
 		return numbers[index] * calculateProduct(numbers, index + 1);
 	}
 	
